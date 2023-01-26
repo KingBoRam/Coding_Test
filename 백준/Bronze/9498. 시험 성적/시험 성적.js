@@ -1,6 +1,8 @@
 const fs = require("fs");
 
-const result = fs.readFileSync("/dev/stdin");
+const inputData = fs.readFileSync("/dev/stdin");
+
+const result = inputData;
 
 if (100 >= result && result >= 90) {
   console.log("A");

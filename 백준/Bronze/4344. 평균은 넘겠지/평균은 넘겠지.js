@@ -1,23 +1,23 @@
-const input = require('fs').readFileSync(0).toString().split('\n');
+const fs = require("fs");
 
-const c = Number(input[0]);
+const iD = fs.readFileSync(0).toString().split("\n");
 
+let testCase = Number(iD[0]);
 
-for(let i=1; i<=c; i++){
-    let sum = 0;
-    let count = 0;
-    
-    scores = input[i].split(' ').map(Number);
-    const n = scores[0];
-    
-    for(let j=1; j<=n; j++){
-        sum += scores[j];
+for (let i = 1; i <= testCase; i++) {
+  let sum = 0;
+  let count = 0;
+  let average = 0;
+  let arrayCase = iD[i].split(" ").map(Number);
+  const n = arrayCase[0];
+  for (let j = 1; j <= n; j++) {
+    sum += arrayCase[j];
+  }
+  average = Math.floor(sum / n);
+  for (let k = 1; k <= n; k++) {
+    if (arrayCase[k] > average) {
+      count++;
     }
-    const avg = sum/n;
-    for(let k=1; k<=n; k++){
-       if(scores[k]>avg){
-           count++;
-       }
-   }
-    console.log(((count/n)*100).toFixed(3)+"%");
+  }
+  console.log(((count / n) * 100).toFixed(3) + "%");
 }

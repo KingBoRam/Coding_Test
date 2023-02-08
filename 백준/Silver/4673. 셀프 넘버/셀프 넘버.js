@@ -13,7 +13,7 @@ function d(iD) {
   let maxNum = Math.max(...constr);
   let selfNum = Array.from({ length: maxNum }, (v, i) => i + 1);
   let difference = selfNum.filter((x) => !constr.includes(x));
-  let diff2 = difference.filter((x) => x < iD);
+  let diff2 = difference.filter((x) => x < 10000);
 
   console.log(diff2.join("\n"));
 }

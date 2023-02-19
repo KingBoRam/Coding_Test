@@ -8,8 +8,7 @@ for (let i = 1; i <= count; i++) {
   for (let j = 0; j < A.length; j++) {
     if (!arr.includes(A[j])) {
       arr.push(A[j]);
-    }
-    if (A[j] == A[j - 1]) {
+    } else if (A[j] == A[j - 1]) {
       arr.push(A[j]);
     }
   }

@@ -1,5 +1,4 @@
-const fs=require('fs');
-
-const inputData=parseInt(fs.readFileSync("/dev/stdin").toString().trim());
-
-console.log(inputData-543);
+const fs = require("fs");
+const iD = +fs.readFileSync(0).toString().trim();
+const result = iD - 543;
+console.log(result);

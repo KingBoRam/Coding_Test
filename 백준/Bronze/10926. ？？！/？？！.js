@@ -1,5 +1,4 @@
 const fs = require("fs");
-
-const inputData = fs.readFileSync("/dev/stdin").toString().trim();
-
-console.log(inputData+"??!");
+const iD = fs.readFileSync(0).toString().trim().split(" ");
+const result = iD + "??!";
+console.log(result);

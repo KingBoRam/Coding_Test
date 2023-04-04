@@ -1,1 +1,4 @@
-console.log("\\    /\\\n )  ( ')\n(  /  )\n \\(__)|");
+console.log("\\    /\\");
+console.log(" )  ( ')");
+console.log("(  /  )");
+console.log(" \\(__)|");

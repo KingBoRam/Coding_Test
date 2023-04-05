@@ -1,12 +1,8 @@
 const fs = require("fs");
+const iD = +fs.readFileSync(0).toString().trim();
 
-const inputData = fs.readFileSync("/dev/stdin");
-
-let result;
-
-if ((inputData % 4 == 0 && inputData % 100 !== 0) || inputData % 400 == 0) {
-  result = 1;
+if (iD % 4 === 0 && (iD % 100 !== 0 || iD % 400 === 0)) {
+  console.log(1);
 } else {
-  result = 0;
+  console.log(0);
 }
-console.log(result);

@@ -1,18 +1,21 @@
 const fs = require("fs");
+const [X, Y] = fs
+  .readFileSync(0)
+  .toString()
+  .trim()
+  .split("\n")
+  .map(Number);
 
-const inputData = fs.readFileSync(0).toString().split("\n");
-
-const A = parseInt(inputData[0]);
-const B = parseInt(inputData[1]);
-
-let result;
-if (Math.sign(A) > 0 && Math.sign(B) > 0) {
-  result = 1;
-} else if (Math.sign(A) < 0 && Math.sign(B) > 0) {
-  result = 2;
-} else if (Math.sign(A) < 0 && Math.sign(B) < 0) {
-  result = 3;
-} else {
-  result = 4;
+if (X > 0) {
+  if (Y > 0) {
+    console.log(1);
+  } else {
+    console.log(4);
+  }
+} else if (X < 0) {
+  if (Y > 0) {
+    console.log(2);
+  } else {
+    console.log(3);
+  }
 }
-console.log(result);

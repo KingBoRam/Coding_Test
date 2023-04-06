@@ -1,19 +1,18 @@
 const fs = require("fs");
+const [H, M] = fs
+  .readFileSync(0)
+  .toString()
+  .trim()
+  .split(" ")
+  .map(Number);
 
-const inputData = fs.readFileSync(0).toString().split(" ");
-
-let H = Number(inputData[0]);
-let M = Number(inputData[1]);
-
-if (M - 45 < 0 && H - 1 < 0) {
-  H = H - 1 + 24;
-  M = M - 45 + 60;
-  console.log(H + " " + M);
-} else if (M - 45 >= 0) {
-  M = M - 45;
-  console.log(H + " " + M);
+if (M - 45 >= 0) {
+  result = [H, M - 45];
+  console.log(H + " " + (M - 45));
 } else if (M - 45 < 0) {
-  H = H - 1;
-  M = M - 45 + 60;
-  console.log(H + " " + M);
+  if (H === 0) {
+    console.log(23 + " " + (60 - 45 + M));
+  } else {
+    console.log(H - 1 + " " + (60 - 45 + M));
+  }
 }

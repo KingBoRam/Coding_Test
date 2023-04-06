@@ -1,22 +1,22 @@
 const fs = require("fs");
+const [A, B, C] = fs
+  .readFileSync(0)
+  .toString()
+  .trim()
+  .split(" ")
+  .map(Number);
 
-const inputData = fs.readFileSync(0).toString().split(" ");
-
-const A = parseInt(inputData[0]);
-const B = parseInt(inputData[1]);
-const C = parseInt(inputData[2]);
-
-let AA = A == B && B == C;
-let BB = (A == B && B != C) || (A == C && A != B) || (C == B && B != A);
-let CC = A != B && B != C && A != C;
-if (AA) {
+if (A === B && B === C) {
   console.log(10000 + A * 1000);
-} else if (BB) {
-  if ((A == B && B != C) || (A == C && A != B)) {
+} else if (A !== B && B !== C && A !== C) {
+  let maxNum = Math.max(A, B, C);
+  console.log(maxNum * 100);
+} else {
+  if (A === B) {
     console.log(1000 + A * 100);
-  } else if (C == B && B != A) {
-    console.log(1000 + C * 100);
+  } else if (A === C) {
+    console.log(1000 + A * 100);
+  } else if (B === C) {
+    console.log(1000 + B * 100);
   }
-} else if (CC) {
-  console.log(Math.max(A, B, C) * 100);
 }

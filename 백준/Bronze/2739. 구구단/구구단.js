@@ -1,7 +1,6 @@
 const fs = require("fs");
+const iD = +fs.readFileSync(0).toString().trim();
 
-const inputData = Number(fs.readFileSync(0));
-
-for (let i = 1; i < 10; i++) {
-  console.log(inputData + " * " + i + " = " + inputData * i);
+for (let i = 1; i <= 9; i++) {
+  console.log(iD + " * " + i + " = " + iD * i);
 }

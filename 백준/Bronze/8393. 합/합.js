@@ -1,11 +1,8 @@
 const fs = require("fs");
-
-const inputData = fs.readFileSync(0);
+const iD = +fs.readFileSync(0).toString().trim();
 
 let sum = 0;
-
-for (i = 1; i <= inputData; i++) {
+for (let i = 0; i <= iD; i++) {
   sum += i;
 }
-
 console.log(sum);

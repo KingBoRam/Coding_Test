@@ -1,17 +1,15 @@
 const fs = require("fs");
-/**iD =inputData */
-const iD = fs.readFileSync(0).toString().split("\n");
-
-const price = Number(iD[0]);
-const count = Number(iD[1]);
+const iD = fs.readFileSync(0).toString().trim().split("\n");
+const price = +iD.shift();
+const count = +iD.shift();
 
 let sum = 0;
-
-for (i = 2; i <= count + 1; i++) {
-  let cal = iD[i].split(" ").map(Number);
-  sum += cal[0] * cal[1];
+for (let i = 0; i < count; i++) {
+  let arr = iD[i].toString().trim().split(" ");
+  sum += arr[0] * arr[1];
 }
-if (price == sum) {
+
+if (price === sum) {
   console.log("Yes");
 } else {
   console.log("No");

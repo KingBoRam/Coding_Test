@@ -1,7 +1,6 @@
 const fs = require("fs");
+const iD = +fs.readFileSync(0).toString().trim();
 
-const iD = fs.readFileSync(0);
-
-for (i = 1; i <= iD; i++) {
-  console.log(" ".repeat(iD - i) + "*".repeat(i));
+for (let i = 1, j = iD - 1; i <= iD, j >= 0; i++, j--) {
+  console.log(" ".repeat(j) + "*".repeat(i));
 }

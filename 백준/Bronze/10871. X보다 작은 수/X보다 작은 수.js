@@ -1,15 +1,8 @@
 const fs = require("fs");
-
-const iD = fs.readFileSync(0).toString().split("\n");
-
-let A = iD[0].split(" ").map(Number);
-let B = iD[1].split(" ").map(Number);
-let C = "";
-
-for (let i = 0; i < B.length; i++) {
-  if (B[i] < A[1]) {
-    C += B[i] + " ";
-  }
-}
-
-console.log(C);
+const iD = fs.readFileSync(0).toString().trim().split("\n");
+const [count, num] = iD[0].toString().trim().split(" ").map(Number);
+const arr = iD[1].toString().trim().split(" ").map(Number);
+const result = arr.filter((v) => {
+  return v < num;
+});
+console.log(result.join(" "));

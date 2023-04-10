@@ -1,14 +1,12 @@
 const fs = require("fs");
-
 const iD = fs.readFileSync(0).toString().trim().split("\n");
+const count = +iD[0];
+const arr = iD[1].toString().trim().split(" ").map(Number);
 
-let count = Number(iD[0]);
-let score = iD[1].split(" ").map(Number);
-let maxScore = Math.max(...score);
-let sum = 0;
+const maxNum = Math.max(...arr);
+const sum = arr.reduce((prev, cur) => {
+  return (prev += cur);
+});
+const result = ((sum / maxNum) * 100) / count;
 
-for (let i = 0; i < count; i++) {
-  sum += score[i];
-}
-let cal = ((sum / (maxScore * count)) * 100).toFixed(2);
-console.log(cal);
+console.log(result.toFixed(2));

@@ -1,59 +1,23 @@
 const fs = require("fs");
-
-const iD = fs.readFileSync(0).toString().trim();
-
-function changeNum(str) {
-  let result = 0;
-  for (let i = 0; i < str.length; i++) {
-    if (str[i].includes("A") || str[i].includes("B") || str[i].includes("C")) {
-      result += 3;
-    } else if (
-      str[i].includes("D") ||
-      str[i].includes("E") ||
-      str[i].includes("F")
-    ) {
-      result += 4;
-    } else if (
-      str[i].includes("G") ||
-      str[i].includes("H") ||
-      str[i].includes("I")
-    ) {
-      result += 5;
-    } else if (
-      str[i].includes("J") ||
-      str[i].includes("K") ||
-      str[i].includes("L")
-    ) {
-      result += 6;
-    } else if (
-      str[i].includes("M") ||
-      str[i].includes("N") ||
-      str[i].includes("O")
-    ) {
-      result += 7;
-    } else if (
-      str[i].includes("P") ||
-      str[i].includes("Q") ||
-      str[i].includes("R") ||
-      str[i].includes("S")
-    ) {
-      result += 8;
-    } else if (
-      str[i].includes("T") ||
-      str[i].includes("U") ||
-      str[i].includes("V")
-    ) {
-      result += 9;
-    } else if (
-      str[i].includes("W") ||
-      str[i].includes("X") ||
-      str[i].includes("Y") ||
-      str[i].includes("Z")
-    ) {
-      result += 10;
-    }
+const iD = fs.readFileSync(0).toString().trim().split("");
+let sum = 0;
+for (let i = 0; i < iD.length; i++) {
+  if (iD[i] === "A" || iD[i] === "B" || iD[i] === "C") {
+    sum += 3;
+  } else if (iD[i] === "D" || iD[i] === "E" || iD[i] === "F") {
+    sum += 4;
+  } else if (iD[i] === "G" || iD[i] === "H" || iD[i] === "I") {
+    sum += 5;
+  } else if (iD[i] === "J" || iD[i] === "K" || iD[i] === "L") {
+    sum += 6;
+  } else if (iD[i] === "M" || iD[i] === "N" || iD[i] === "O") {
+    sum += 7;
+  } else if (iD[i] === "P" || iD[i] === "Q" || iD[i] === "R" || iD[i] === "S") {
+    sum += 8;
+  } else if (iD[i] === "T" || iD[i] === "U" || iD[i] === "V") {
+    sum += 9;
+  } else {
+    sum += 10;
   }
-  console.log(result);
 }
-
-changeNum(iD);
+console.log(sum);

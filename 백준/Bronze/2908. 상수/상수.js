@@ -1,20 +1,21 @@
 const fs = require("fs");
 const iD = fs.readFileSync(0).toString().trim().split(" ");
 
-const A = Number(iD[0]);
-const B = Number(iD[1]);
+let A = "";
+let B = "";
 
-function reverse(num) {
-  let result = "";
-  let one = num % 10;
-  let ten = ((num % 100) - (num % 10)) / 10;
-  let hund = ((num % 1000) - (num % 100)) / 100;
-  result = Number(one.toString() + ten.toString() + hund.toString());
-  return result;
+const arr = iD[0].trim().split("");
+arr.reverse();
+for (let i = 0; i < arr.length; i++) {
+  A += arr[i];
 }
-
-if (reverse(A) > reverse(B)) {
-  console.log(reverse(A));
+const arr2 = iD[1].trim().split("");
+arr2.reverse();
+for (let i = 0; i < arr2.length; i++) {
+  B += arr2[i];
+}
+if (Number(A) > Number(B)) {
+  console.log(Number(A));
 } else {
-  console.log(reverse(B));
+  console.log(Number(B));
 }

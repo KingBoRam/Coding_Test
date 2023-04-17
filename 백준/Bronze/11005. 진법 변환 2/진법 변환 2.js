@@ -1,10 +1,4 @@
 const fs = require("fs");
-const [tenNum, binary] = fs
-  .readFileSync(0)
-  .toString()
-  .trim()
-  .split(" ")
-  .map(Number);
-
-const result = tenNum.toString(binary);
-console.log(result.toUpperCase());
+const iD = fs.readFileSync(0).toString().trim().split(" ").map(Number);
+let num = iD[0].toString(iD[1]);
+console.log(num.toUpperCase());
